@@ -1,0 +1,167 @@
+body{
+  min-height:100%;
+  font-family: Comic Sans MS;
+  background: #D3D3D3;
+
+}
+
+h1{
+  text-transform: capitalize;
+  background: DarkGrey;
+  color:black;
+  margin: 0;
+  padding:10px 40px;
+  font-weight: normal;
+}
+
+h2{
+  text-transform: capitalize;
+  background: rgb(197, 197, 197);
+  color:black;
+  margin: 0;
+  padding:10px 40px;
+  font-weight: normal;
+}
+
+input{
+  background: Silver;
+  width: 50%;
+  box-sizing: border-box;
+  height:55px ;
+  font-size: 25px;
+  font-weight: 0.6px;
+  padding-left:30px;
+  border: 2px solid DimGrey;
+  color: DarkGrey;
+}
+input:focus{
+  background: LightGrey;
+  border: 2px solid DarkSlateGrey;
+  outline: none;
+  color: DarkSlateGrey;
+}
+
+#add-input{
+  position: relative;
+  left: 24px;
+}
+
+#ed-input{
+  position: relative;
+  left: 12px;
+}
+
+#input-block{
+  position: relative;
+  background-color: rgb(197, 197, 197);
+}
+
+
+.pic{
+  margin-right: 10px;
+  text-align:center;
+  height:50px;
+  width: 0;
+  opacity: 0;
+  -webkit-transition:0.3s;
+  transition: 0.3s linear;
+}
+
+
+i{
+  cursor: pointer;
+}
+
+button{
+  background-color: rgb(91, 95, 100);
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 5px;
+  font-family: Comic Sans MS;
+  -webkit-transition-duration: 0.4s; 
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+button:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid DarkSlateGrey;
+}
+.note-buttons{
+  position: relative;
+  bottom: 45px;
+}
+.buttons-li-del{
+  position: absolute;
+  right: 130px;
+}
+
+.buttons-li-ed{
+  position: absolute;
+  right: 30px;
+}
+
+#add-btn{
+  position: absolute;
+  right: 37px;
+  top: 8px;
+}
+
+#ed-btn{
+  position: absolute;
+  right: 130px;
+  top: 8px;
+}
+
+#can-btn{
+  position: absolute;
+  right: 27px;
+  top: 8px;
+}
+
+#todo{
+  margin: 0 auto ;
+  box-shadow: 0 0 1em black;
+  max-width: 500px;
+  height:100%;
+  background:white;
+  position:relative;
+}
+
+.todos{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.todos li{
+  overflow: auto;
+  text-overflow: ellipsis;
+  background: Gainsboro;
+  height: 50px;
+  line-height: 50px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.todos li:nth-child(2n){
+  background: LightGray;
+}
+.todos li:hover span{
+  width: 50px;
+  opacity: 1.0;
+  margin-left: 5px;
+}
+
+#icon-check{
+  position: relative;
+  left: 10px;
+}
+
+span{
+  position: relative;
+  left: 20px;
+}
