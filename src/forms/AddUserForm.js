@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+
 const AddUserForm = props => {
   const initialFormState = { id: null, note: '', }
   const [user, setUser] = useState(initialFormState)
@@ -7,6 +8,7 @@ const AddUserForm = props => {
   const handleInputChange = event => {
     const { name, value } = event.currentTarget
     setUser({ ...user, [name]: value })
+    
   }
 
   const handleSubmit = event => {
@@ -18,13 +20,13 @@ const AddUserForm = props => {
     // обнуляем форму, с помощью setUser функции
     // которая у нас взята из хука в данном компоненте [1]
     setUser(initialFormState)
+
   }
 
   return (
     <form onSubmit={handleSubmit}>
       <div id = "input-block">
         <input
-          
           id = "add-input"
           type="text"
           name="note"

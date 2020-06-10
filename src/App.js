@@ -5,13 +5,23 @@ import { UserTable } from './tables/NoteTable'
 import './App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBook } from "@fortawesome/free-solid-svg-icons";
-
+import { useStateWithLocalStorage } from '../src/tables/useStateWithLocalStorage';
 
 const App = () => {
+  const [value, setValue] = useStateWithLocalStorage(
+    'note'
+  );
+
   const usersData = [
     { id: 1, note: 'Go to the training' },
     { id: 2, note: 'Walking with the dog' },
   ]
+
+  
+  if (value){
+    const LocalNote = { id: usersData.length + 1, note: value }
+    usersData.push(LocalNote)
+  }
 
   const [users, setUsers] = useState(usersData)
   // флаг editing - изначально false, функция установки флага
@@ -21,6 +31,7 @@ const App = () => {
   const initialFormState = { id: null, note: '' }
   // значение "текущий пользователь на редактировании" + функция установки этого значения
   const [currentUser, setCurrentUser] = useState(initialFormState)
+
 
   const addUser = user => {
     user.id = users.length + 1

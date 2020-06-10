@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck  } from "@fortawesome/free-solid-svg-icons";
+import { useStateWithLocalStorage } from '../tables/useStateWithLocalStorage';
+
 
 const UserTable = props => {
   const handleDeleteUser = id => {
@@ -10,6 +12,16 @@ const UserTable = props => {
       props.deleteUser(id)
     }
   }
+
+  const [value, setValue] = useStateWithLocalStorage(
+    'note'
+  );
+
+  useEffect(() => {
+    setValue(props.users)
+  });
+
+
   return (
     <div id="list">
       <ul className="todos">
@@ -17,7 +29,9 @@ const UserTable = props => {
           props.users.map(user => (
             <li key={user.id}>
               <FontAwesomeIcon id = "icon-check" icon={ faCheck }/>
-              <span>{user.note}</span>
+              <span>
+                {user.note}
+              </span>
               {/* добавили обработку на клик */}
               <div className = "note-buttons">
                 <button className="buttons-li-del"
