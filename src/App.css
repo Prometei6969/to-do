@@ -165,3 +165,8 @@ span{
   position: relative;
   left: 20px;
 }
+
+.checked{
+  color:gray;
+  text-decoration:line-through;
+}

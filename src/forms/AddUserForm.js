@@ -8,7 +8,7 @@ const AddUserForm = props => {
   const handleInputChange = event => {
     const { name, value } = event.currentTarget
     setUser({ ...user, [name]: value })
-    
+    localStorage.setItem(String(name), value)
   }
 
   const handleSubmit = event => {
@@ -20,6 +20,8 @@ const AddUserForm = props => {
     // обнуляем форму, с помощью setUser функции
     // которая у нас взята из хука в данном компоненте [1]
     setUser(initialFormState)
+
+    
 
   }
 
