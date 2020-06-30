@@ -8,7 +8,7 @@ const AddUserForm = props => {
   const handleInputChange = event => {
     const { name, value } = event.currentTarget
     setUser({ ...user, [name]: value })
-    localStorage.setItem(String(name), value)
+
   }
 
   const handleSubmit = event => {

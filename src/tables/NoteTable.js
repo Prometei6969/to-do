@@ -13,22 +13,15 @@ const UserTable = props => {
     }
   }
 
-  var clicked = false
+  const list = JSON.parse(localStorage.getItem("list"));
 
-  function handleClick(e) {
-    e.preventDefault()
-    clicked = true
-  }
-
-  
-  var className = clicked ? 'checked' : '';
 
   return (
     <div id="list">
       <ul className="todos">
-        {props.users.length > 0 ? (
-          props.users.map(user => (
-            <li key={user.id} onClick={handleClick} className={className} >
+        {list.length > 0 ? (
+          list.map(user => (
+            <li key={user.id}>
               <FontAwesomeIcon id = "icon-check" icon={ faCheck }/>
               <span>
                 {user.note}
